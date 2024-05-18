@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+    <style>
+        body {
+            background-color: darkgreen;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            font-size: 4em;
+            margin: 0;
+            color: yellow;
+        }
+        h2 {
+            text-align: center;
+            color: white;
+        }
+        p {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px; /* Add spacing between button blocks */
+            margin: 20px;
+        }
+        .button-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 200px; /* Ensure blocks don't stretch too wide */
+        }
+        .button {
+            position: relative;
+            margin: 10px; /* Add spacing between buttons */
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 0;
+            text-align: center;
+        }
+        .button img {
+            width: 200px; /* Set width for the images */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+        }
+        .label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .text {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .description {
+            color: white;
+            font-size: 16px;
+            width: 100%; /* Ensure description matches button width */
+            margin-top: 10px;
+            text-align: center;
+        }
+        .rectangle {
+            position: absolute;
+            width: 800px;
+            height: 500px;
+            background-color: olivedrab;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: -1;
+        }
+    </style>
+    <script>
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body>
+    <h1>Are you looking</h1>
+    <h1>for...</h1>
+    <div class="rectangle"></div>
+    <div class="button-container">
+        <div class="button-block">
+            <button class="button" onclick="navigateTo('/mentor')">
+                <div class="label">1.</div>
+                <img src="https://m.foolcdn.com/media/dubs/images/smiling_man_in_business_suit_at_laptop_GettyIma.original.jpg" alt="Mentor">
+                <div class="text">A Mentor</div>
+            </button>
+            <div class="description">
+                A real person involved in an industry you are interested in. You can ask them any questions you might have and they'll be there to guide you through your path.
+            </div>
+        </div>
+        <div class="button-block">
+            <button class="button" onclick="navigateTo('/community')">
+                <div class="label">2.</div>
+                <img src="https://montco.today/wp-content/uploads/sites/2/2016/12/photodune-3414091-group-of-business-people-working-at-office-m-1-1.jpg" alt="Community">
+                <div class="text">A Community</div>
+            </button>
+            <div class="description">
+                Meet people who are going or have gone through similar experiences. Find a wide and supportive community who will be there for you 24/7.
+            </div>
+        </div>
+        <div class="button-block">
+            <button class="button" onclick="navigateTo('/assistant')">
+                <div class="label">3.</div>
+                <img src="https://images.idgesg.net/images/article/2018/02/artificial_intelligence_ai_virtual_assistant_robot_chatbot_machine_learning_assistive_technology_thinkstock_162685804-100749923-large.jpg?auto=webp&quality=85,70" alt="Assistant">
+                <div class="text">An Assistant</div>
+            </button>
+            <div class="description">
+                Our AI assistant is there to give you advice based on your previous experiences. Personalized for you, it will give you guidance for your professional capacities.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

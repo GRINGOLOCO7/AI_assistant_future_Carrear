@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Future Seeking</title>
+    <style>
+        body {
+            background-color: green;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin-top: 5px;
+        }
+        .oval {
+            position: absolute;
+            top: 100px;
+            width: 200px;
+            height: 70px;
+            border: 2px solid yellowgreen; /* Add border */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+        .oval-text {
+            font-size: 1.5em;
+            color: yellow;
+            text-align: center;
+        }
+        .rectangle {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-color: olivedrab;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: -1;
+        }
+        h1 {
+            text-align: center;
+            font-size: 4em;
+            margin: 0;
+            color: yellow;
+        }
+        h2 {
+            text-align: center;
+            color: white;
+        }
+        p {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        form {
+            display: inline-block; /* Display forms inline */
+            margin: 10px; /* Add spacing between forms */
+        }
+        input {
+            background-color: #8fbc8f; /* Changed button background color */
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Added transition for hover effect */
+        }
+        input:hover {
+            background-color: #006400; /* Changed button background color on hover */
+        }
+        /* Style for the image */
+        .corner-image {
+            position: absolute;
+            top: 10px; /* Adjust position from top */
+            right: 10px; /* Adjust position from right */
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://static.vecteezy.com/system/resources/previews/000/356/375/original/vector-graduation-cap-icon.jpg" alt="Placeholder Image" class="corner-image">
+    <div class="oval">
+        <span class="oval-text">Hi there</span>
+    </div>
+    <div class="rectangle"></div>
+    <h1>Welcome to</h1>
+    <h1>Future Seeking</h1>
+    <h2>We are excited to have you here</h2>
+    <p>Please click the button below to log in.</p>
+    <form action="/login" method="post">
+        <input type="submit" value="Log In">
+    </form>
+    <form action="/signup" method="post">
+        <input type="submit" value="Sign Up">
+    </form>
+</body>
+</html>
