@@ -58,13 +58,21 @@ def assistant():
         if not user_input:
             return jsonify(response="No input provided.")
 
+        messages = [
+            {"role": "system", "content": bot()},
+            {"role": "user", "content": user_input}
+        ]
 
+        messages.append({"role": "user", "content": user_input})
 
+        completition = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=messages
+        )
 
-
-
-        bot_response = f"You said: {user_input}"
-        return jsonify(response=bot_response)
+        response = completition.choices[0].message.content
+        #bot_response = f"You said: {user_input}"
+        return jsonify(response=response)
     return render_template('assistant.html')
 
 if __name__ == '__main__':
