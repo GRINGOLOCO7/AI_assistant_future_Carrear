@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Future Seeking</title>
+    <style>
+        body {
+            background-color: #fff3da;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin-top: 0px;
+        }
+        .rectangle {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background-color: #053036;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: -1;
+        }
+        h1 {
+            text-align: center;
+            font-size: 6em;
+            margin: 0;
+            color: #fff3da;
+        }
+        h2 {
+            text-align: center;
+            color: #fff3da;
+            font-size: 3em;
+            margin-bottom: 0px;
+        }
+        p {
+            text-align: center;
+            color: #a69167;
+            margin-top: 50px;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-content: center;
+            margin: 20px;
+            max-width: 800px;
+        }
+        .button {
+            background-color: #a69167;
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #d4ad72;
+        }
+        .back-button {
+            position: absolute;
+            top: 55px;
+            left: 71px;
+            background-color: #fff3da;
+            color: #a69167;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #ddd3da;
+        }
+        .direct-chat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #a69167;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 10px;
+        }
+        .direct-chat:hover {
+            background-color: #d4ad72;
+        }
+        .direct-chat img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+    </script>
+</head>
+
+<body>
+    <button class="back-button" onclick="navigateTo('/dashboard')">Back to Dashboard</button>
+    <div class="rectangle"></div>
+    <h1>Community</h1>
+    <p>Groups:</p>
+    <div class="button-container">
+        <button class="button" onclick="navigateTo('/community_chat')">Technology and IT</button>
+        <button class="button" onclick="navigateTo('/community_chat')">Health</button>
+        <button class="button" onclick="navigateTo('/community_chat')">Applied Mathematics</button>
+        <button class="button" onclick="navigateTo('/community_chat')">Engineering</button>
+        <button class="button" onclick="navigateTo('/community_chat')">Arts</button>
+        <button class="button" onclick="navigateTo('/community_chat')">Others</button>
+    </div>
+    <p>Direct Chats:</p>
+    <div class="button-container">
+        <button class="direct-chat" onclick="navigateTo('/community_chat')">
+            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User 1"> John Doe
+        </button>
+        <button class="direct-chat" onclick="navigateTo('/community_chat')">
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User 2"> Jane Smith
+        </button>
+        <button class="direct-chat" onclick="navigateTo('/community_chat')">
+            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="User 3"> Bob Johnson
+        </button>
+        <button class="direct-chat" onclick="navigateTo('/community_chat')">
+            <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="User 4"> Alice Brown
+        </button>
+    </div>
+</body>
+</html>

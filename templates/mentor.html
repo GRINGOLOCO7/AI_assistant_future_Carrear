@@ -91,6 +91,21 @@
         .button:hover {
             background-color: #ddd3da; /* Change button background color on hover */
         }
+        .back-button {
+            position: absolute;
+            top: 55px;
+            left: 71px;
+            background-color: #fff3da;
+            color: #a69167;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #ddd3da;
+        }
     </style>
     <script>
         function navigateTo(url) {
@@ -100,6 +115,7 @@
 </head>
 
 <body>
+    <button class="back-button" onclick="navigateTo('/dashboard')">Back to Dashboard</button>
     <div class="rectangle"></div>
     <h2>Find your personal</h2>
     <h1>mentor</h1>

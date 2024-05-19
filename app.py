@@ -46,10 +46,11 @@ cv_content = None
 def index():
     return render_template('welcome.html')
 
+
+
 @app.route('/login', methods=['POST'])
 def login():
     return render_template('dashboard.html')
-
 @app.route('/signup', methods=['POST'])
 def signup():
     return render_template('dashboard.html')
@@ -68,9 +69,13 @@ def search_mentor():
     return render_template('search_mentor.html')
 
 
+
 @app.route('/community', methods=['GET', 'POST'])
 def community():
-    return "You selected a community."
+    return render_template('community.html')
+@app.route('/community_chat', methods=['GET', 'POST'])
+def community_chat():
+    return render_template('community_chat.html')
 
 
 

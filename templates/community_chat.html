@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Future Seeking - Chat</title>
+    <style>
+        body {
+            background-color: #fff3da;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .rectangle {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background-color: #053036;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: -1;
+        }
+        h1 {
+            text-align: center;
+            font-size: 4em;
+            margin: 0;
+            color: #fff3da;
+        }
+        .chat-container {
+            background-color: #fff;
+            width: 600px;
+            height: 600px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+        .message {
+            background-color: #a69167;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            max-width: 70%;
+        }
+        .message.user {
+            align-self: flex-end;
+            background-color: #d4ad72;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+        }
+        .input-container input {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #a69167;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .input-container button {
+            padding: 10px 20px;
+            background-color: #a69167;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .input-container button:hover {
+            background-color: #d4ad72;
+        }
+        .back-button {
+            position: absolute;
+            top: 55px;
+            left: 79px;
+            background-color: #fff3da;
+            color: #a69167;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #ddd3da;
+        }
+    </style>
+    <script>
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+
+        function sendMessage() {
+            var input = document.getElementById('messageInput');
+            var message = input.value.trim();
+            if (message !== '') {
+                var messagesContainer = document.getElementById('messages');
+                var newMessage = document.createElement('div');
+                newMessage.className = 'message user';
+                newMessage.textContent = message;
+                messagesContainer.appendChild(newMessage);
+                input.value = '';
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button class="back-button" onclick="navigateTo('/community')">Back to Community</button>
+    <div class="rectangle"></div>
+    <h1>Chat</h1>
+    <div class="chat-container">
+        <div id="messages" class="messages">
+            <div class="message"></div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="messageInput" placeholder="Type your message here...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</body>
+</html>
