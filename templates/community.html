@@ -11,12 +11,12 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin-top: 0px;
+            margin: 0;
         }
         .rectangle {
             position: absolute;
-            width: 800px;
-            height: 800px;
+            width: 80%;
+            height: 95%;
             background-color: #053036;
             display: flex;
             justify-content: center;
@@ -25,36 +25,30 @@
         }
         h1 {
             text-align: center;
-            font-size: 6em;
+            font-size: 4vw;
             margin: 0;
             color: #fff3da;
-        }
-        h2 {
-            text-align: center;
-            color: #fff3da;
-            font-size: 3em;
-            margin-bottom: 0px;
         }
         p {
             text-align: center;
             color: #a69167;
-            margin-top: 50px;
-            margin-bottom: 10px;
-            font-size: 2em;
+            margin-top: 2vw;
+            margin-bottom: 1vw;
+            font-size: 2vw;
         }
         .button-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1vw;
             justify-content: center;
-            margin: 20px;
+            margin: 3vw;
             max-width: 800px;
         }
         .button {
             background-color: #a69167;
             color: white;
-            font-size: 16px;
-            padding: 10px;
+            font-size: 1.5vw;
+            padding: 1vw 1.5vw;
             border: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -66,11 +60,11 @@
         }
         .back-button {
             position: absolute;
-            top: 55px;
-            left: 71px;
+            top: 2.5%;
+            left: 10%;
             background-color: #fff3da;
             color: #a69167;
-            padding: 10px 20px;
+            padding: 1vw 2vw;
             border: none;
             cursor: pointer;
             font-size: 16px;
@@ -82,10 +76,10 @@
         .direct-chat {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 1vw;
             background-color: #a69167;
             color: white;
-            padding: 10px;
+            padding: 1vw 1.5vw;
             border: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -95,8 +89,8 @@
             background-color: #d4ad72;
         }
         .direct-chat img {
-            width: 40px;
-            height: 40px;
+            width: 3vw;
+            height: 3vw;
             border-radius: 50%;
         }
     </style>
