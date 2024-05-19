@@ -53,14 +53,29 @@ def login():
 @app.route('/signup', methods=['POST'])
 def signup():
     return render_template('dashboard.html')
+@app.route('/dashboard', methods=['GET','POST'])
+def dashboard():
+    return render_template('dashboard.html')
+
+
+
 
 @app.route('/mentor', methods=['GET', 'POST'])
 def mentor():
-    return "You selected a mentor."
+    return render_template('mentor.html')
+@app.route('/search_mentor', methods=['GET', 'POST'])
+def search_mentor():
+    return render_template('search_mentor.html')
+
 
 @app.route('/community', methods=['GET', 'POST'])
 def community():
     return "You selected a community."
+
+
+
+
+
 
 @app.route('/assistant', methods=['GET', 'POST'])
 def assistant():
@@ -113,6 +128,11 @@ def process_cv():
         cv_content = pdf_text
         #print(cv_content)
         return jsonify({'pdf_text': pdf_text}), 200
+
+
+
+
+
 
 
 

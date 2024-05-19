@@ -97,6 +97,21 @@
             align-items: center;
             z-index: -1;
         }
+        .back-button {
+            position: absolute;
+            top: 55px;
+            left: 79px;
+            background-color: #fff3da;
+            color: #a69167;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #ddd3da;
+        }
     </style>
     <script>
         function navigateTo(url) {
@@ -105,6 +120,7 @@
     </script>
 </head>
 <body>
+    <button class="back-button" onclick="navigateTo('/')">Back to Welcome Page</button>
     <h1>Are you looking</h1>
     <h1>for...</h1>
     <div class="rectangle"></div>

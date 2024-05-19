@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Future Seeking</title>
+    <style>
+        body {
+            background-color: #fff3da;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin-top: 0px;
+        }
+        .rectangle {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background-color: #053036;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: -1;
+        }
+        h1 {
+            text-align: center;
+            font-size: 6em;
+            margin: 0;
+            color: #fff3da;
+        }
+        h2 {
+            text-align: center;
+            color: #fff3da;
+            font-size: 3em;
+            margin-bottom: 0px;
+        }
+        p {
+            text-align: center;
+            color: #a69167;
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+        form {
+            display: inline-block; /* Display forms inline */
+            margin: 10px; /* Add spacing between forms */
+        }
+        input {
+            background-color: #a69167; /* Changed input background color */
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Added transition for hover effect */
+            margin-bottom: 5px; /* Added margin-bottom for spacing */
+            width: 300px; /* Added width to input fields */
+        }
+        input:hover {
+            background-color: #d4ad72; /* Changed button background color on hover */
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px; /* Add spacing between button blocks */
+            margin: 20px;
+        }
+        .button-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 50px; /* Ensure blocks don't stretch too wide */
+        }
+        .button {
+            position: relative;
+            margin: 10px; /* Add spacing between buttons */
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 0;
+            text-align: center;
+            width: 80px; /* Set button width */
+            height: 50px; /* Set button height */
+            background-color: #fff3da; /* Button background color */
+            color: #a69167; /* Button text color */
+            font-size: 16px; /* Button text size */
+            display: flex; /* Make button a flex container */
+            justify-content: center; /* Center button text horizontally */
+            align-items: center; /* Center button text vertically */
+        }
+        .button:hover {
+            background-color: #ddd3da; /* Change button background color on hover */
+        }
+    </style>
+    <script>
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="rectangle"></div>
+    <h2>Find your personal</h2>
+    <h1>mentor</h1>
+    <p>Preferred industry</p>
+    <input type="text" id="industryInput" placeholder="Enter preferred industry...">
+    <p>What you'd like in a mentor</p>
+    <input type="text" id="mentorInput" placeholder="Enter preferences for a mentor...">
+    <div class="button-container">
+        <div class="button-block">
+            <button class="button" onclick="navigateTo('/search_mentor')">
+                <span class="label">Mentor</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
