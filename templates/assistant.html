@@ -5,7 +5,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: darkgreen;
+            background-color: #053036;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -17,7 +17,7 @@
             width: 80%;
             height: 80%;
             max-width: 1000px;
-            background-color: white;
+            background-color: #fff3da;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             display: flex;
@@ -25,7 +25,7 @@
             overflow: hidden;
         }
         .chat-header {
-            background-color: olivedrab;
+            background-color: #a69167;
             color: white;
             padding: 15px;
             text-align: center;
@@ -35,24 +35,24 @@
             padding: 15px;
             flex-grow: 1;
             overflow-y: auto;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #a69167;
         }
         .chat-input {
             display: flex;
             padding: 10px;
-            background-color: #f9f9f9;
+            background-color: #a69167;
         }
         .chat-input input {
             flex: 1;
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #135a64;
             border-radius: 5px;
             margin-right: 10px;
             font-size: 1em;
         }
         .chat-input button {
             padding: 10px 20px;
-            background-color: darkgreen;
+            background-color: #053036;
             color: white;
             border: none;
             border-radius: 5px;
@@ -60,19 +60,19 @@
             font-size: 1em;
         }
         .chat-input button:hover {
-            background-color: green;
+            background-color: #053036;
         }
         .chat-input #cvIcon {
             padding: 10px;
             background-color: white;
-            color: green;
+            color: #053036;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 1em;
         }
         .chat-input #cvIcon:hover {
-            background-color: white;
+            background-color: #fff3da;
         }
         .message {
             margin-bottom: 15px;
@@ -90,10 +90,11 @@
             max-width: 70%;
         }
         .message.user p {
-            background-color: #daf8da;
+            background-color: #bebdbd;
         }
         .message.bot p {
-            background-color: #dbd9d9;
+            color: #135a64;
+            background-color: #ffffff;
         }
     </style>
 </head>
@@ -145,7 +146,7 @@
             // Append user's message
             const userMessageElement = document.createElement('div');
             userMessageElement.className = 'message user';
-            userMessageElement.innerHTML = `<p>Gringo: ${userMessage}</p>`;
+            userMessageElement.innerHTML = `<p><strong>Gringo:</strong> ${userMessage}</p>`;
             chatMessages.appendChild(userMessageElement);
 
             // Clear input
@@ -164,7 +165,7 @@
                 // Append bot's response
                 const botMessageElement = document.createElement('div');
                 botMessageElement.className = 'message bot';
-                botMessageElement.innerHTML = `<p>AI frind: ${data.response}</p>`;
+                botMessageElement.innerHTML = `<p><strong>AIfrind:</strong> ${data.response}</p>`;
                 chatMessages.appendChild(botMessageElement);
 
                 // Scroll to the bottom
