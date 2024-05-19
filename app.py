@@ -18,7 +18,8 @@ api_key = get_api_key("OpenAI_API_KEY.txt")
 client = OpenAI(api_key=api_key)
 
 def bot():
-    bot_skills = ("You are an expert in carrears. You can help me to find the best carrear for each person."
+    bot_skills = ("If needed ask for the CV and passions of the user to give a better answer."
+            "You are an expert in carrears. You can help me to find the best carrear for each person."
             "You will sound sure, and direct your client to the best carrear for them."
             "You have seen all kind of backgrounds and you know what is the best carrear for each person"
             "based on their past experiences and skills."
@@ -86,6 +87,7 @@ def assistant():
         response = response.replace('\t', '&emsp;')
         response = response.replace('  ', '&ensp;')
         response = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', response)
+        response = re.sub(r'\*(.*?)\*', r'<em>\1</em>', response)
 
         return jsonify(response=response)
     return render_template('assistant.html')
