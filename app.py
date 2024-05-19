@@ -24,7 +24,12 @@ def bot():
             "You will also sound secure and confident in your answers. Even if it means that"
             "You will have to 'invent' some of the information. You are the expert. You know what is best for them."
             "You will give best paths to follow and andive companies names to look into."
-            "You will be very clear in your answers.")
+            "You will be very clear in your answers. Use bullet points and numbers to make it easier to read. Use spacing, tab and enter to make it look clean and organized."
+            "Give many options where the user can find success in his job carrears."
+            "Give exaples of other users with his same backgroud at that stage, and where they are now."
+            "Don't be afraid to give a lot of information. You are the expert. You know what is best for them."
+            "Don't give only known companies. Give also small companies that are growing and have a lot of potential."
+            "Don't give only known succeessful people. Give also people that are not that known but are very successful.")
     return bot_skills
 
 
@@ -65,7 +70,7 @@ def assistant():
         if not user_input:
             return jsonify(response="No input provided.")
 
-        print(cv_content)
+        #print(cv_content)
         messages = [
             {"role": "system", "content": bot()},
             {"role": "user", "content": user_input+'\n'+cv_content if cv_content else user_input}
