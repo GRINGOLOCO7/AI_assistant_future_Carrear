@@ -16,6 +16,6 @@ Build an AI Assistant to help student to get clarify about their future
 
 `conda activate AI_HTML`
 
-`pip install langchain flask openai pandas numpy`
+`pip install langchain flask openai pandas numpy PyPDF2`
 
 `conda deactivate`

@@ -62,6 +62,18 @@
         .chat-input button:hover {
             background-color: green;
         }
+        .chat-input #cvIcon {
+            padding: 10px;
+            background-color: white;
+            color: green;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .chat-input #cvIcon:hover {
+            background-color: white;
+        }
         .message {
             margin-bottom: 15px;
         }
@@ -81,7 +93,7 @@
             background-color: #daf8da;
         }
         .message.bot p {
-            background-color: #f1f0f0;
+            background-color: #dbd9d9;
         }
     </style>
 </head>
@@ -96,10 +108,33 @@
         <div class="chat-input">
             <input type="text" id="userInput" placeholder="Type a message..." />
             <button onclick="sendMessage()">Send</button>
+            <input type="file" id="cvInput" accept=".pdf" style="display: none;" onchange="uploadCV()">
+            <button id="cvIcon" onclick="document.getElementById('cvInput').click();">Upload CV</button>
         </div>
     </div>
 
     <script>
+        function uploadCV() {
+            const cvInput = document.getElementById('cvInput');
+            const cvIcon = document.getElementById('cvIcon');
+            const formData = new FormData();
+            formData.append('cv', cvInput.files[0]);
+
+            fetch('/process_cv', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle response from backend
+                console.log(data);
+                // Change button state after successful upload
+                cvIcon.textContent = "CV Uploaded";
+                cvIcon.disabled = true; // Disabling the button
+                cvIcon.style.backgroundColor = "#cbcbcb";
+            })
+            .catch(error => console.error('Error:', error));
+        }
         function sendMessage() {
             const userInput = document.getElementById('userInput');
             const chatMessages = document.getElementById('chatMessages');
