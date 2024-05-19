@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from openai import OpenAI
 import PyPDF2
 import requests
+import re
 
 app = Flask(__name__)
 
@@ -81,6 +82,11 @@ def assistant():
             messages=messages
         )
         response = completition.choices[0].message.content
+        response = response.replace('\n', '<br>')
+        response = response.replace('\t', '&emsp;')
+        response = response.replace('  ', '&ensp;')
+        response = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', response)
+
         return jsonify(response=response)
     return render_template('assistant.html')
 
